@@ -60,7 +60,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="font-display font-semibold text-lg tracking-tight">DriftWatch</span>
+            <span className="font-display font-semibold text-lg tracking-tight">Xeneport</span>
           </Link>
         </div>
         <nav className="flex-1 p-4 space-y-1">
@@ -104,7 +104,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                   <TrendingUp className="w-4 h-4 text-primary-foreground" />
                 </div>
-                <span className="font-display font-semibold text-lg">DriftWatch</span>
+                <span className="font-display font-semibold text-lg">Xeneport</span>
               </Link>
               <Button variant="ghost" size="icon" onClick={() => setSidebarOpen(false)}>
                 <X className="w-5 h-5" />

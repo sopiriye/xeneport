@@ -50,7 +50,7 @@ export default function Landing() {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="font-display font-bold text-lg">DriftWatch</span>
+            <span className="font-display font-bold text-lg">Xeneport</span>
           </Link>
           <div className="flex items-center gap-3">
             <Link to="/login">
@@ -76,7 +76,7 @@ export default function Landing() {
             <span className="text-primary">Stay balanced.</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
-            DriftWatch helps long-term investors detect portfolio drift before it becomes a problem.
+            Xeneport helps long-term investors detect portfolio drift before it becomes a problem.
             Track allocation, receive rebalance signals, and maintain your DCA strategy with precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -137,7 +137,7 @@ export default function Landing() {
             This is not a brokerage.
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            DriftWatch is a decision-support platform. We help you see when your portfolio
+            Xeneport is a decision-support platform. We help you see when your portfolio
             is out of balance — you execute trades through your own stockbroker.
             Think of it as your capital allocation intelligence layer.
           </p>
@@ -224,10 +224,10 @@ export default function Landing() {
             <div className="w-6 h-6 rounded bg-primary flex items-center justify-center">
               <TrendingUp className="w-3 h-3 text-primary-foreground" />
             </div>
-            <span className="font-display font-semibold text-sm">DriftWatch</span>
+            <span className="font-display font-semibold text-sm">Xeneport</span>
           </div>
           <p className="text-xs text-muted-foreground">
-            © 2026 DriftWatch. Portfolio intelligence for disciplined investors.
+            © 2026 Xeneport. Portfolio intelligence for disciplined investors.
           </p>
         </div>
       </footer>

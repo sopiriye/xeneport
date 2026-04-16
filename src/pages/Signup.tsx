@@ -54,7 +54,7 @@ export default function Signup() {
             <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
               <TrendingUp className="w-4.5 h-4.5 text-primary-foreground" />
             </div>
-            <span className="font-display font-bold text-xl">DriftWatch</span>
+            <span className="font-display font-bold text-xl">Xeneport</span>
           </Link>
           <h1 className="text-xl font-display font-semibold">Create your account</h1>
           <p className="text-sm text-muted-foreground mt-1">Start monitoring portfolio drift today</p>

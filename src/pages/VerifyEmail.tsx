@@ -87,7 +87,7 @@ export default function VerifyEmail() {
             <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
               <TrendingUp className="w-4.5 h-4.5 text-primary-foreground" />
             </div>
-            <span className="font-display font-bold text-xl">DriftWatch</span>
+            <span className="font-display font-bold text-xl">Xeneport</span>
           </Link>
 
           <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-4">
