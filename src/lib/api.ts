@@ -10,8 +10,9 @@ import type {
   UserProfile,
 } from "./types";
 
-const API_BASE_URL =
-  (import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api").replace(/\/$/, "");
+const API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL || "https://xeneport-api.onrender.com/api"
+).replace(/\/$/, "");
 
 type RequestOptions = {
   method?: string;
@@ -46,7 +47,10 @@ const buildUrl = (path: string, query?: RequestOptions["query"]) => {
   return url.toString();
 };
 
-async function apiRequest<T>(path: string, options: RequestOptions = {}): Promise<T> {
+async function apiRequest<T>(
+  path: string,
+  options: RequestOptions = {},
+): Promise<T> {
   const token = options.token ?? getStoredAccessToken();
   const response = await fetch(buildUrl(path, options.query), {
     method: options.method ?? "GET",
@@ -69,7 +73,10 @@ async function apiRequest<T>(path: string, options: RequestOptions = {}): Promis
   }
 
   if (!response.ok) {
-    const errorPayload = parsed as { message?: string | string[] } | string | null;
+    const errorPayload = parsed as
+      | { message?: string | string[] }
+      | string
+      | null;
     const message =
       typeof errorPayload === "object" && errorPayload?.message instanceof Array
         ? errorPayload.message.join(", ")
@@ -214,14 +221,20 @@ export const holdingsApi = {
       body: payload,
     }),
   update: (holdingId: string, payload: { shares: number }) =>
-    apiRequest<{ message: string; holding: Holding }>(`/holdings/${holdingId}`, {
-      method: "PATCH",
-      body: payload,
-    }),
+    apiRequest<{ message: string; holding: Holding }>(
+      `/holdings/${holdingId}`,
+      {
+        method: "PATCH",
+        body: payload,
+      },
+    ),
   remove: (holdingId: string) =>
-    apiRequest<{ message: string; holding: Holding }>(`/holdings/${holdingId}`, {
-      method: "DELETE",
-    }),
+    apiRequest<{ message: string; holding: Holding }>(
+      `/holdings/${holdingId}`,
+      {
+        method: "DELETE",
+      },
+    ),
 };
 
 export const allocationApi = {
