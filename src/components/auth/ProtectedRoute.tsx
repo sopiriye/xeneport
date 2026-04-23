@@ -8,7 +8,7 @@ export default function ProtectedRoute() {
   if (isBootstrapping) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background px-4">
-        <p className="text-sm text-muted-foreground">Loading your workspace...</p>
+        <p className="text-sm text-muted-foreground">Loading your portfolio...</p>
       </div>
     );
   }
