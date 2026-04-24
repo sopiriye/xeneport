@@ -185,7 +185,7 @@ export default function Analytics() {
             </div>
             <p className="font-display font-semibold text-muted-foreground">Coming Soon</p>
             <p className="text-xs text-muted-foreground mt-1 max-w-xs">
-              Historical allocation snapshots are not exposed by the current backend yet.
+              Historical allocation snapshots will be shown here.
             </p>
           </div>
         </div>
