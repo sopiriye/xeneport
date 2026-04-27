@@ -28,6 +28,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let isActive = true;
 
     const bootstrap = async () => {
+      // bootstrap flow:
+      // Restore the persisted session first, then revalidate the stored token by fetching the current profile.
       if (!session?.accessToken) {
         if (isActive) {
           setIsBootstrapping(false);
@@ -50,6 +52,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setSessionState(nextSession);
         setStoredSession(nextSession);
       } catch {
+        // bootstrap flow:
+        // Clear stale local session data when the backend no longer accepts the stored token.
         if (!isActive) {
           return;
         }
@@ -71,11 +75,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const setSession = (nextSession: AuthSession) => {
+    // setSession helper:
+    // Persist the full authenticated session so route guards and page refreshes can restore access cleanly.
     setStoredSession(nextSession);
     setSessionState(nextSession);
   };
 
   const updateUser = (user: UserProfile) => {
+    // updateUser helper:
+    // Update only the public user payload while preserving the existing access token for the current session.
     setSessionState((currentSession) => {
       if (!currentSession) {
         return currentSession;
@@ -92,6 +100,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const logout = () => {
+    // logout helper:
+    // Remove the local authenticated session so protected routes fall back to the public auth flow.
     clearStoredSession();
     setSessionState(null);
   };
@@ -118,6 +128,8 @@ export function useAuth() {
   const context = useContext(AuthContext);
 
   if (!context) {
+    // useAuth guard:
+    // Prevent accidental usage outside the provider because the app expects a single shared auth session source.
     throw new Error("useAuth must be used within an AuthProvider");
   }
 

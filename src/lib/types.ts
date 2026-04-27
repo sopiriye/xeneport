@@ -1,3 +1,5 @@
+// User-facing auth and profile types:
+// These interfaces mirror the normalized response shapes returned by the backend API layer.
 export interface UserProfile {
   id: string;
   firstName: string;
@@ -16,6 +18,8 @@ export interface AuthSession {
   user: UserProfile;
 }
 
+// Portfolio and holdings domain types:
+// These describe the core investor data rendered across dashboard, portfolio detail, and analytics screens.
 export interface Portfolio {
   id: string;
   userId: string;
@@ -52,6 +56,8 @@ export interface Holding {
   updatedAt: string;
 }
 
+// Allocation and drift response types:
+// These capture the backend-calculated portfolio intelligence used by charts, status tables, and alerts.
 export interface AllocationItem {
   holdingId: string;
   securityId: string;
@@ -136,6 +142,8 @@ export interface DriftStatusResponse {
   items: DriftItem[];
 }
 
+// Reference and alert types:
+// These support ticker search, alert review, and the generic paginated response wrapper shared by list endpoints.
 export interface Security {
   id: string;
   ticker: string;
