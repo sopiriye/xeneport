@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import PublicRoute from "@/components/auth/PublicRoute";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import { AuthProvider } from "@/context/AuthContext";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
+        <VercelAnalytics />
       </TooltipProvider>
     </AuthProvider>
   </QueryClientProvider>
